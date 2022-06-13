@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>CR Food Wheel</title>
+        <link rel="stylesheet" href="/css/main.css" type="text/css" />
+        <script type="text/javascript" src="/js/Winwheel.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+
+    </head>
+    <body>
+        <div align="center">
+            <h1>CR Food Wheel</h1>
+            <p>Can't decide what to eat? Spin the wheel!</p>
+            <br />
+            <div class="pt-5 container c-elem">
+                <div class="inner-c">
+                    <button id="spin_button" onclick="startSpin();">
+                        Spin
+                    </button>
+                </div>
+            </div>
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td width="600" height="600" class="the_wheel" align="center" valign="center">
+                        <div id="pointer">
+                            <svg id="triangle" viewBox="0 0 100 100">
+                                <polygon points="0 15, 100 15, 50 100"/>
+                            </svg>
+                        </div>
+                        <canvas id="canvas" width="600" height="600">
+                            <p style="{color: white}" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
+                        </canvas>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script src="/js/index.js"></script>
+    </body>
+</html>

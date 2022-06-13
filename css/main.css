@@ -1,0 +1,101 @@
+/*
+Description:
+    Contains all the styles for the winning wheel page.
+    
+Verison History:
+    2012-01-28, Douglas McKechie
+    - Created based off earlier version.
+    
+    2015-09-26, Douglas McKechie
+    - Minor updates for the 2.0 winwheel example.
+*/
+
+body
+{
+    font-family: arial;
+}
+
+/* Sets the background image for the wheel */
+/* td.the_wheel
+{
+    background-image: url(./wheel_back.png);
+    background-position: center;
+    background-repeat: none;
+} */
+
+/* Do some css reset on selected elements */
+
+div.html5_logo
+{
+    margin-left:70px;
+}
+
+/* Styles for the power selection controls */
+table.power
+{
+    background-color: #cccccc;
+    cursor: pointer;
+    border:1px solid #333333;
+}
+
+table.power th
+{
+    background-color: white;
+    cursor: default;
+}
+
+td.pw1
+{
+    background-color: #6fe8f0;
+}
+
+td.pw2
+{
+    background-color: #86ef6f;
+}
+
+td.pw3
+{
+    background-color: #ef6f6f;
+}
+
+/* Style applied to the spin button once a power has been selected */
+.clickable
+{
+    cursor: pointer;
+}
+
+/* Other misc styles */
+.margin_bottom
+{
+    margin-bottom: 5px;
+}
+
+#spin_button {
+    width: 5rem;
+    margin-left: -2.5rem;
+    background-color: maroon;
+    color: white;
+    border-radius: 10px;
+    outline: none;
+}
+
+.container {
+    width: 100%;
+    height: fit-content;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.inner-c {
+    width: 50%;
+}
+
+#pointer {
+    width: 50px;
+    height: 50px;
+    padding-bottom: 10px;
+}
