@@ -1,30 +1,38 @@
-let jsonFile = [];
 let theWheel = {};
 const spinBtn = document.getElementById('spin_button');
 
-window.addEventListener('load', () => {
-    fetch('./list.json').then(res => res.json())
-    .then(data => {
-        jsonFile = data.list;
-        console.log(jsonFile);
-        theWheel = new Winwheel({
-            'numSegments'  : jsonFile.length,     // Specify number of segments.
-            'outerRadius'  : 300,   // Set outer radius so wheel fits inside the background.
-            'textFontSize' : 28,    // Set font size as desired.
-            'segments'     :        // Define segments including colour and text.
-            assignSegments(),
-            'animation' :           // Specify the animation to use.
-            {
-                'type'     : 'spinToStop',
-                'duration' : 5,     // Duration in seconds.
-                'spins'    : 8,     // Number of complete spins.
-                'callbackFinished' : alertPrize
-            }
-        });
-    })
-});
+const initData = async () => {
+    const fileData = await fetch('./list.json').then(res => {return res.json()});
+    theWheel = new Winwheel({
+        'numSegments'  : fileData.list.length,     // Specify number of segments.
+        'outerRadius'  : 300,   // Set outer radius so wheel fits inside the background.
+        'textFontSize' : 28,    // Set font size as desired.
+        'segments'     :        // Define segments including colour and text.
+        assignSegments(fileData.list),
+        'animation' :           // Specify the animation to use.
+        {
+            'type'     : 'spinToStop',
+            'duration' : 5,     // Duration in seconds.
+            'spins'    : 8,     // Number of complete spins.
+            'callbackFinished' : alertPrize
+        }
+    });
 
-const assignSegments = () => {
+    return {
+        "data": fileData.list,
+        "tags": assignTags(fileData.list)
+    }
+}
+
+const assignTags = (fileData) => {
+    let res = [];
+    [...fileData].forEach((obj) => {
+        res = _.union(res, obj.tags)
+    });
+    return res;
+}
+
+const assignSegments = (fileData) => {
     const colors = [
         {
             'fillStyle': '#ECC8AF',
@@ -47,12 +55,15 @@ const assignSegments = () => {
             'textFillStyle': 'white'
         },
     ];
-    const res = jsonFile.map((obj) => {
-        console.log(Math.floor(Math.random()* (colors.length + 1)));
-        return {
-            'text': obj,
-            ...colors[Math.floor(Math.random()* (colors.length + 1))]
-        }
+    let res = [];
+    let i = 0;
+    console.log(fileData);
+    [...fileData].forEach((obj) => {
+        res.push({
+            'text': obj.name,
+            ...colors[i%(colors.length+1)]
+        })
+        i++;
     });
     return res;
 }

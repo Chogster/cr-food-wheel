@@ -4,13 +4,20 @@
         <link rel="stylesheet" href="/css/main.css" type="text/css" />
         <script type="text/javascript" src="/js/Winwheel.min.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.4/underscore-umd-min.js"></script>
     </head>
     <body>
         <div align="center">
             <h1>CR Food Wheel</h1>
             <p>Can't decide what to eat? Spin the wheel!</p>
             <br />
+            <div x-data="{fileData: []}"
+                 x-init="fileData = await initData()">
+                <template x-for="tag in fileData.tags">
+                    <h2 x-text="tag"></h2>
+                </template>
+            </div>
+
             <div class="pt-5 container c-elem">
                 <div class="inner-c">
                     <button id="spin_button" onclick="startSpin();">
@@ -33,6 +40,7 @@
                 </tr>
             </table>
         </div>
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
         <script src="/js/index.js"></script>
     </body>
 </html>

@@ -1,19 +1,114 @@
 {
     "list": [
-        "Pompier",
-        "Hanko",
-        "Friends & Brgrs",
-        "Paisano",
-        "Block",
-        "Bank",
-        "Old Boy",
-        "Robert's",
-        "Momotoko",
-        "Pupu",
-        "Kita",
-        "Waffdaddy",
-        "Social burger joint",
-        "The Tray",
-        "The Other One"
+        {
+            "name": "Pompier",
+            "tags": [
+                "buffet", "rotating"
+            ],
+            "website": "https://pompier.fi/espa/"
+        },
+        {
+            "name": "Haiku",
+            "tags": [
+                "buffet", "sushi"
+            ],
+            "website": "https://www.haikusushi.fi/kampgalleria"
+        },
+        {
+            "name": "Friends & Brgrs",
+            "tags": [
+                "burger", "menu"
+            ]
+        },
+        {
+            "name": "Paisano",
+            "tags": [
+                "rotating", "menu", "vegan"
+            ]
+        },
+        {
+            "name": "Block",
+            "tags": [
+                "buffet"
+            ],
+            "website": "https://www.dylan.fi/block"
+        },
+        {
+            "name": "Bank",
+            "tags": [
+                "buffet", "rotating"
+            ],
+            "website": "https://www.ravintolabank.fi/en/lunch-club/",
+            "note": "Not open in July"
+        },
+        {
+            "name": "Old Boy",
+            "tags": [
+                "rotating"
+            ],
+            "note": "Only open on fridays in summer"
+        },
+        {
+            "name": "Robert's",
+            "tags": [
+                "buffet", "vegan"
+            ]
+        },
+        {
+            "name": "Momotoko",
+            "tags": [
+                "ramen"
+            ]
+        },
+        {
+            "name": "Pupu",
+            "tags": [
+                "menu", "vegan"
+            ]
+        },
+        {
+            "name": "Kita",
+            "tags": [
+                "buffet", "sushi"
+            ]
+        },
+        {
+            "name": "Waffdaddy",
+            "tags": [
+                "menu", "vegan"
+            ],
+            "website": "https://www.waffdaddy.fi/"
+        },
+        {
+            "name": "Social burger joint",
+            "tags": [
+                "burger", "menu"
+            ]
+        },
+        {
+            "name": "The Tray",
+            "tags": [
+                "buffet"
+            ],
+            "website": "https://www.glohotels.fi/en/hotels/glo-kluuvi/restaurant/the-tray-lunch"
+        },
+        {
+            "name": "The Other One",
+            "tags": [
+                "buffet", "vegan"
+            ],
+            "website": "https://www.kluuvi.fi/lounaslistat/"
+        },
+        {
+            "name": "Story",
+            "tags": []
+        },
+        {
+            "name": "Zucchini",
+            "tags": [
+                "vegan"
+            ],
+            "nmi": true
+        }
     ]
 }
