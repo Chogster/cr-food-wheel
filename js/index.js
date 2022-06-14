@@ -1,12 +1,17 @@
 let theWheel = {};
 const spinBtn = document.getElementById('spin_button');
+const resetBtn = document.getElementById('reset_button');
 
 const initData = async () => {
     const fileData = await fetch('./list.json').then(res => {return res.json()});
+    const state = {
+        "data": fileData.list,
+        "tags": assignTags(fileData.list),
+    };
     theWheel = new Winwheel({
         'numSegments'  : fileData.list.length,     // Specify number of segments.
-        'outerRadius'  : 300,   // Set outer radius so wheel fits inside the background.
-        'textFontSize' : 28,    // Set font size as desired.
+        'outerRadius'  : 340,   // Set outer radius so wheel fits inside the background.
+        'textFontSize' : 26,    // Set font size as desired.
         'segments'     :        // Define segments including colour and text.
         assignSegments(fileData.list),
         'animation' :           // Specify the animation to use.
@@ -18,10 +23,7 @@ const initData = async () => {
         }
     });
 
-    return {
-        "data": fileData.list,
-        "tags": assignTags(fileData.list)
-    }
+    return state;
 }
 
 const assignTags = (fileData) => {
@@ -83,7 +85,6 @@ function startSpin()
         // to rotate with the duration of the animation the quicker the wheel spins.
         theWheel.animation.spins = 3;
         spinBtn.setAttribute('disabled', true);
-
         // Begin the spin animation by calling startAnimation on the wheel object.
         theWheel.startAnimation();
 
@@ -101,12 +102,9 @@ function resetWheel()
     theWheel.stopAnimation(false);  // Stop the animation, false as param so does not call callback function.
     theWheel.rotationAngle = 0;     // Re-set the wheel angle to 0 degrees.
     theWheel.draw();                // Call draw to render changes to the wheel.
-
-    document.getElementById('pw1').className = "";  // Remove all colours from the power level indicators.
-    document.getElementById('pw2').className = "";
-    document.getElementById('pw3').className = "";
-
     wheelSpinning = false;          // Reset to false to power buttons and spin can be clicked again.
+    spinBtn.removeAttribute('disabled');
+    resetBtn.setAttribute('disabled', true);
 }
 
 // -------------------------------------------------------
@@ -116,6 +114,6 @@ function resetWheel()
 function alertPrize(indicatedSegment)
 {
     // Do basic alert of the segment text. You would probably want to do something more interesting with this information.
-    spinBtn.removeAttribute('disabled');
+    resetBtn.removeAttribute('disabled');
     alert("You have won " + indicatedSegment.text);
 }

@@ -6,34 +6,37 @@
         <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.4/underscore-umd-min.js"></script>
     </head>
-    <body>
+    <body x-data="{state: []}"
+          x-init="state = await initData()">
         <div align="center">
             <h1>CR Food Wheel</h1>
             <p>Can't decide what to eat? Spin the wheel!</p>
             <br />
-            <div x-data="{fileData: []}"
-                 x-init="fileData = await initData()">
-                <template x-for="tag in fileData.tags">
-                    <h2 x-text="tag"></h2>
-                </template>
-            </div>
 
-            <div class="pt-5 container c-elem">
+            <template x-for="tag in state.tags">
+                <button onClick="selectTag" x-bind:data-tag="tag" class="pill" x-text="tag"></button>
+            </template>
+
+            <div class="pt-5 container">
                 <div class="inner-c">
-                    <button id="spin_button" onclick="startSpin();">
+                    <button id="spin_button" @click="startSpin();">
                         Spin
+                    </button>
+                    <br>
+                    <button disabled id="reset_button" @click="resetWheel();">
+                        Reset
                     </button>
                 </div>
             </div>
             <table cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                    <td width="600" height="600" class="the_wheel" align="center" valign="center">
+                    <td width="680" height="680" class="the_wheel" align="center" valign="center">
                         <div id="pointer">
                             <svg id="triangle" viewBox="0 0 100 100">
                                 <polygon points="0 15, 100 15, 50 100"/>
                             </svg>
                         </div>
-                        <canvas id="canvas" width="600" height="600">
+                        <canvas id="canvas" width="680" height="680">
                             <p style="{color: white}" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
                         </canvas>
                     </td>
