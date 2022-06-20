@@ -14,7 +14,7 @@
             <br />
 
             <template x-for="tag in state.tags">
-                <button onClick="selectTag" x-bind:data-tag="tag" class="pill" x-text="tag"></button>
+                <button @click="selectTag($el)" x-bind:data-tag="tag" class="pill selected" x-text="tag"></button>
             </template>
 
             <div class="pt-5 container">
