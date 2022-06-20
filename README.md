@@ -14,6 +14,7 @@ Ping me on slack and we could get it sorted out. Alternatively, you could just s
 * TweenMax
 * Underscore.js
 * Alpine.js
+* SweetAlert2
 
 ## Disclaimers
 
