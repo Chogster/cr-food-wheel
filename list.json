@@ -118,6 +118,94 @@
             "tags": [
                 "vegan"
             ]
+        },
+        {
+            "name": "Latitude",
+            "tags":[
+                "sushi", "menu", "pokebowl"
+            ],
+            "website": "https://www.latitude25.fi/",
+            "note": "Availability unknown in July"
+        },
+        {
+            "name": "Sandwich Club",
+            "tags":[
+                "menu"
+            ],
+            "website": "https://www.sandwichclub.fi/",
+            "note": "Not open on mondays"
+        },
+        {
+            "name": "Kiila",
+            "tags":[
+                "menu", "vegan"
+            ],
+            "website": "https://www.ravintolakiila.fi/lounas"
+        },
+        {
+            "name": "Suburritos",
+            "tags":[
+                "menu"
+            ],
+            "website": "http://suburritos.fi/menu/?lang=en",
+            "note": "Availability unknown in July"
+        },
+        {
+            "name": "Eat Poke HKI",
+            "tags": [
+                "pokebowl"
+            ],
+            "website": "https://www.facebook.com/eatpokehkiofficial/"
+        },
+        {
+            "name": "Cafe Esplanad",
+            "tags": [
+                "buffet"
+            ]
+        },
+        {
+            "name": "La Torrefazione",
+            "tags": [
+                "vegan", "menu"
+            ],
+            "website": "https://www.latorre.fi/en/location/aleksanterinkatu/lunch"
+        },
+        {
+            "name": "Paulig Kulma",
+            "tags": [
+                "buffet"
+            ],
+            "website": "https://www.paulig.com/en/paulig-kulma/menu",
+            "note": "Lunch is not available until mid-August"
+        },
+        {
+            "name": "Vegoshi",
+            "tags": [
+                "vegan"
+            ],
+            "website": "https://www.vegoshi.fi/"
+        },
+        {
+            "name": "Ravintola WTC",
+            "tags": [
+                "buffet", "vegan"
+            ],
+            "website": "https://www.foodandco.fi/ravintolat/Ravintolat-kaupungeittain/helsinki/wtc/"
+        },
+        {
+            "name": "Iguana",
+            "tags": [
+                "menu"
+            ],
+            "website": "http://www.iguana.fi/"
+        },
+        {
+            "name": "Santa Fe",
+            "tags": [
+                "menu"
+            ],
+            "website": "http://www.santafe.fi/?lang=en",
+            "note": "Lunch is not available until early-August"
         }
     ]
 }

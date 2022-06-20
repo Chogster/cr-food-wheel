@@ -158,9 +158,7 @@ const startSpin = () => {
 }
 
 const resetWheel = () => {
-    theWheel.stopAnimation(false);
-    theWheel.rotationAngle = 0;
-    theWheel.draw();
+    adjustWheel();
     wheelSpinning = false;
     spinBtn.removeAttribute('disabled');
 }
