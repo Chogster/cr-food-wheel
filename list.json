@@ -3,7 +3,7 @@
         {
             "name": "Pompier",
             "tags": [
-                "buffet", "rotating"
+                "buffet"
             ],
             "website": "https://pompier.fi/espa/"
         },
@@ -17,14 +17,16 @@
         {
             "name": "Friends & Brgrs",
             "tags": [
-                "burger", "menu"
-            ]
+                "burger", "menu", "vegan"
+            ],
+            "website": "https://www.friendsandbrgrs.fi/en/"
         },
         {
             "name": "Paisano",
             "tags": [
-                "rotating", "menu", "vegan"
-            ]
+                "menu", "vegan"
+            ],
+            "website": "https://www.paisano.fi/lunch/"
         },
         {
             "name": "Block",
@@ -36,7 +38,7 @@
         {
             "name": "Bank",
             "tags": [
-                "buffet", "rotating"
+                "buffet"
             ],
             "website": "https://www.ravintolabank.fi/en/lunch-club/",
             "note": "Not open in July"
@@ -44,8 +46,9 @@
         {
             "name": "Old Boy",
             "tags": [
-                "rotating"
+                "vegan", "menu"
             ],
+            "website": "https://www.oldboy.fi/#menu-section",
             "note": "Only open on fridays in summer"
         },
         {
@@ -57,20 +60,23 @@
         {
             "name": "Momotoko",
             "tags": [
-                "ramen"
-            ]
+                "ramen", "vegan"
+            ],
+            "website": "https://momotoko.com/en/lunch/"
         },
         {
             "name": "Pupu",
             "tags": [
                 "menu", "vegan"
-            ]
+            ],
+            "website": "https://pupu.fi/"
         },
         {
             "name": "Kita",
             "tags": [
                 "buffet", "sushi"
-            ]
+            ],
+            "website": "http://www.kitaravintola.fi/"
         },
         {
             "name": "Waffdaddy",
@@ -83,7 +89,8 @@
             "name": "Social burger joint",
             "tags": [
                 "burger", "menu"
-            ]
+            ],
+            "website": "https://burgerjoint.fi/"
         },
         {
             "name": "The Tray",
@@ -101,14 +108,16 @@
         },
         {
             "name": "Story",
-            "tags": []
+            "tags": [
+                "vegan", "menu"
+            ],
+            "website": "https://story-restaurants.fi/menu/kauppahalli/"
         },
         {
             "name": "Zucchini",
             "tags": [
                 "vegan"
-            ],
-            "nmi": true
+            ]
         }
     ]
 }

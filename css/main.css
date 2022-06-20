@@ -1,16 +1,10 @@
 body
 {
     font-family: arial;
+    background: whitesmoke;
 }
 
-/* Other misc styles */
-.margin_bottom
-{
-    margin-bottom: 5px;
-}
-
-#spin_button {
-    background-color: #495867;
+.action_button {
     color:white;
     outline: none;
     cursor: pointer;
@@ -21,6 +15,14 @@ body
     border-radius: 10px;
     display: inline-block;
     cursor: pointer;
+    min-width: 6em;
+    min-height: 2em;
+    font-variant-caps: all-small-caps;
+    font-size: 1em;
+}
+
+#spin_button {
+    background-color: #495867;
 }
 
 #spin_button:disabled {
@@ -31,17 +33,7 @@ body
 
 #reset_button {
     background-color: #495867;
-    color:white;
-    outline: none;
-    cursor: pointer;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
     margin-top: 1rem;
-    border-radius: 10px;
-    display: inline-block;
-    cursor: pointer;
 }
 
 #reset_button:disabled {
@@ -92,3 +84,16 @@ body
 .selected {
     background-color: #ECC8AF;
 }
+
+.fs-075 {
+    font-size: 0.75em;
+}
+
+.version {
+    font-size: 0.65em;
+    color: #495867;
+}
+
+.no-border {
+    border: 0 !important;
+}  
