@@ -33,6 +33,7 @@ const initData = async () => {
     });
     globalState = state;
     includedTags = state.tags;
+    winwheelResize();
     return state;
 }
 

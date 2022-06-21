@@ -4,11 +4,6 @@ body
     background: whitesmoke;
 }
 
-.the_wheel {
-    width: 100%;
-    height: 50%;
-}
-
 .action_button {
     color:white;
     outline: none;
