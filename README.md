@@ -1,4 +1,9 @@
 # CR Food Wheel
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b53f1dd4-d244-475f-ac16-edb7b8c5130a/deploy-status)](https://app.netlify.com/sites/cr-foodwheel/deploys)
+
+Live version [here](https://cr-foodwheel.netlify.app)
+
 This tool is inteded for use by CR employees in Helsinki.
 
 Ever found yourself wondering what you should be eating today? Fret not, because this is exactly the tool for a roadie like you 🍕 

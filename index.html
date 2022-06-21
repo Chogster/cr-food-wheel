@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>CR Food Wheel</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
         <link rel="stylesheet" href="/css/main.css" type="text/css" />
         <script type="text/javascript" src="/js/Winwheel.min.js"></script>
         <script type="text/javascript" src="/js/TweenMax.min.js"></script>
@@ -32,13 +33,16 @@
             </div>
             <table cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                    <td width="680" height="680" class="the_wheel" align="center" valign="center">
+                    <td class="the_wheel" align="center" valign="center">
                         <div id="pointer">
                             <svg id="triangle" viewBox="0 0 100 100">
                                 <polygon points="0 15, 100 15, 50 100"/>
                             </svg>
                         </div>
-                        <canvas id="canvas" width="680" height="680">
+                        <canvas width="682" height="682"
+                        data-responsiveMinWidth="180"
+                        data-responsiveScaleHeight="true"   /* Optional Parameters */
+                        data-responsiveMargin="320" id="canvas">
                             <p style="{color: white}" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
                         </canvas>
                     </td>
@@ -52,7 +56,7 @@
             </p>
             <br>
             <p class="version">
-                Version: 1.0.0 | <a href="https://github.com/Chogster/cr-food-wheel" target="_blank">🐙🐈‍⬛</a>
+                Version: 1.0.1 | <a href="https://github.com/Chogster/cr-food-wheel" target="_blank">🐙🐈‍⬛</a>
             </p>
         </div>
         <script defer src="/js/cdn.min.js"></script>

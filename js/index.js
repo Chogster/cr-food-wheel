@@ -30,7 +30,7 @@ const constructWheel = (segmentData) => {
     theWheel = new Winwheel({
         'numSegments'  : segmentData.length,     // Specify number of segments.
         'outerRadius'  : 340,   // Set outer radius so wheel fits inside the background.
-        'textFontSize' : 26,    // Set font size as desired.
+        'textFontSize' : 24,    // Set font size as desired.
         'segments'     :        // Define segments including colour and text.
         assignSegments(_.shuffle(segmentData)),
         'animation' :           // Specify the animation to use.
@@ -39,7 +39,8 @@ const constructWheel = (segmentData) => {
             'duration' : 5,     // Duration in seconds.
             'spins'    : 8,     // Number of complete spins.
             'callbackFinished' : alertDecision
-        }
+        },
+        'responsive'   : true
     });
     theWheel.draw();
 }
