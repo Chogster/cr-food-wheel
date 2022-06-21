@@ -16,23 +16,12 @@ const initData = async () => {
         "data": restaurantData,
         "tags": assignTags(restaurantData),
     };
-    constructWheel(restaurantData);
-    globalState = state;
-    includedTags = state.tags;
-    return state;
-}
-
-/**
- * Takes in an array of objects to construct the wheel again
- * @param {Array} segmentData 
- */
-const constructWheel = (segmentData) => {
     theWheel = new Winwheel({
-        'numSegments'  : segmentData.length,     // Specify number of segments.
-        'outerRadius'  : 340,   // Set outer radius so wheel fits inside the background.
+        'numSegments'  : restaurantData.length,     // Specify number of segments.
+        'outerRadius'  : 320,   // Set outer radius so wheel fits inside the background.
         'textFontSize' : 24,    // Set font size as desired.
         'segments'     :        // Define segments including colour and text.
-        assignSegments(_.shuffle(segmentData)),
+        assignSegments(_.shuffle(restaurantData)),
         'animation' :           // Specify the animation to use.
         {
             'type'     : 'spinToStop',
@@ -42,7 +31,9 @@ const constructWheel = (segmentData) => {
         },
         'responsive'   : true
     });
-    theWheel.draw();
+    globalState = state;
+    includedTags = state.tags;
+    return state;
 }
 
 /**
@@ -93,7 +84,33 @@ const adjustWheel = () => {
         });
     }
     _.uniq(items);
-    constructWheel(items);
+    let newSegments = assignSegments(_.shuffle(items));
+
+    /**
+     * Winwheel doesn't seem to co-operate when deleting all segments. The following steps explain 
+     * the workaround
+     * 1) All segments are deleted
+     * 2) If there is still a segment with a non-null value remaining at position 1, a new segment 
+     *    is added and then the non-null segment is deleted
+     * 3) All new relevant segments are added
+     * 4) The filler segment that was added at step 2 is deleted
+     */
+    for(i=1; i<=theWheel.segments.length; i++) {
+        theWheel.deleteSegment(i);
+    }
+    if (theWheel.segments[1].text != null) {
+        theWheel.addSegment();
+        theWheel.deleteSegment(1);
+    }
+
+    for(i=0; i<newSegments.length; i++) {
+        let newSegment = theWheel.addSegment();
+        newSegment.text = newSegments[i].text;
+        newSegment.fillStyle = newSegments[i].fillStyle;
+        newSegment.textFillStyle = newSegments[i].textFillStyle;
+    }
+    theWheel.deleteSegment(1); // This is important because Winwheel gets upset if the segment[0] is not null
+    theWheel.draw();
 }
 
 /**
@@ -192,5 +209,4 @@ const alertDecision = (indicatedSegment) => {
         confirmButtonColor: '#495867',
         isConfirmed: resetWheel()
       });
-    // alert("You have won " + indicatedSegment.text);
 }
