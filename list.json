@@ -153,7 +153,7 @@
         {
             "name": "Eat Poke HKI",
             "tags": [
-                "pokebowl"
+                "buffet", "pokebowl"
             ],
             "website": "https://www.facebook.com/eatpokehkiofficial/"
         },
@@ -206,6 +206,13 @@
             ],
             "website": "http://www.santafe.fi/?lang=en",
             "note": "Lunch is not available until early-August"
+        },
+        {
+            "name": "Ra'amen",
+            "tags": [
+                "buffet","ramen"
+            ],
+            "website": "https://raamen.fi/#menu"
         }
     ]
 }

@@ -111,6 +111,7 @@ const adjustWheel = () => {
         newSegment.textFillStyle = newSegments[i].textFillStyle;
     }
     theWheel.deleteSegment(1); // This is important because Winwheel gets upset if the segment[0] is not null
+    theWheel.rotationAngle = 0;
     theWheel.draw();
 }
 
