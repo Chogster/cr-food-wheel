@@ -3,6 +3,7 @@ let globalState = {};
 let includedTags = [];
 let isExclusiveTag = false;
 let wheelSpinning = false;
+let previousIncludedTags = [];
 const spinBtn = document.getElementById('spin_button');
 
 /**
@@ -33,6 +34,7 @@ const initData = async () => {
     });
     globalState = state;
     includedTags = state.tags;
+    includedTags.registerListener
     winwheelResize();
     return state;
 }
@@ -65,6 +67,7 @@ const selectTag = (tagElem) => {
         includedTags.push(tagData);
     }
     includedTags = _.uniq(includedTags);
+    saveInLocalStorage();
     adjustWheel();
 }
 
@@ -212,3 +215,41 @@ const alertDecision = (indicatedSegment) => {
         isConfirmed: resetWheel()
       });
 }
+
+const getLocalStorageData = () => {
+    const lsExistingData = localStorage.getItem('CR_FW');
+    let parsedStorage = null;
+    if (lsExistingData != null && lsExistingData != '') {
+        parsedStorage = JSON.parse(lsExistingData);
+    }
+    console.log('watching')
+    return parsedStorage;
+}
+
+/**
+ * Saves the exluded tags in localStorage to access at init next time the user visits the app
+ */
+const saveInLocalStorage = () => {
+    const allTags = globalState.tags;
+    const excludedTags = _.without(allTags, ...includedTags);
+    const objExcludedTags = {excludedTags}
+    localStorage.setItem('CR_FW', JSON.stringify(objExcludedTags));
+}
+
+/**
+ * Checks localstorage after init and deselects tags that have been previously excluded
+ * This is a dirty implementation, might need to rework later...
+ */
+window.setTimeout(() => {
+    if (previousIncludedTags != includedTags) {
+        const parsedStorage = getLocalStorageData();
+        if (parsedStorage != null && Object.keys(parsedStorage).length > 0 && parsedStorage.excludedTags && parsedStorage.excludedTags.length > 0) {
+            parsedStorage.excludedTags.forEach((tag) => {
+                let elem = document.querySelector(`[data-tag="${tag}"]`);
+                selectTag(elem);
+                console.log(elem);
+            })
+        }
+    }
+    previousIncludedTags = includedTags;
+}, 250);

@@ -40,8 +40,7 @@
             "tags": [
                 "buffet"
             ],
-            "website": "https://www.ravintolabank.fi/en/lunch-club/",
-            "note": "Not open in July"
+            "website": "https://www.ravintolabank.fi/en/lunch-club/"
         },
         {
             "name": "Old Boy",
@@ -120,14 +119,6 @@
             ]
         },
         {
-            "name": "Latitude",
-            "tags":[
-                "sushi", "menu", "pokebowl"
-            ],
-            "website": "https://www.latitude25.fi/",
-            "note": "Availability unknown in July"
-        },
-        {
             "name": "Sandwich Club",
             "tags":[
                 "menu"
@@ -147,8 +138,7 @@
             "tags":[
                 "menu"
             ],
-            "website": "http://suburritos.fi/menu/?lang=en",
-            "note": "Availability unknown in July"
+            "website": "http://suburritos.fi/menu/?lang=en"
         },
         {
             "name": "Eat Poke HKI",
@@ -175,8 +165,7 @@
             "tags": [
                 "buffet"
             ],
-            "website": "https://www.paulig.com/en/paulig-kulma/menu",
-            "note": "Lunch is not available until mid-August"
+            "website": "https://www.paulig.com/en/paulig-kulma/menu"
         },
         {
             "name": "Vegoshi",
@@ -204,8 +193,7 @@
             "tags": [
                 "menu"
             ],
-            "website": "http://www.santafe.fi/?lang=en",
-            "note": "Lunch is not available until early-August"
+            "website": "http://www.santafe.fi/?lang=en"
         },
         {
             "name": "Ra'amen",

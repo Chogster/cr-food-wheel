@@ -9,7 +9,7 @@
         <script type="text/javascript" src="/js/sweetalert2@11.js"></script>
     </head>
     <body x-data="{state: []}"
-          x-init="state = await initData()">
+          x-init="state = await initData();$watch('state.tags', value=>console.log(value));">
         <div align="center">
             <h1>CR Food Wheel</h1>
             <p>Ever found yourself wondering what you should be eating today? Fret not, because this is exactly the tool for a roadie like you 🍕<br>
@@ -56,7 +56,7 @@
             </p>
             <br>
             <p class="version">
-                Version: 1.0.3 | <a href="https://github.com/Chogster/cr-food-wheel" target="_blank">🐙🐈‍⬛</a>
+                Version: 1.1.0 | <a href="https://github.com/Chogster/cr-food-wheel" target="_blank">🐙🐈‍⬛</a>
             </p>
         </div>
         <script defer src="/js/cdn.min.js"></script>
