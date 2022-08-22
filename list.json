@@ -166,14 +166,7 @@
                 "buffet"
             ],
             "website": "https://www.paulig.com/en/paulig-kulma/menu"
-        },
-        {
-            "name": "Vegoshi",
-            "tags": [
-                "vegan"
-            ],
-            "website": "https://www.vegoshi.fi/"
-        },
+        }
         {
             "name": "Ravintola WTC",
             "tags": [
